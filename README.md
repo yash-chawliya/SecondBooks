@@ -14,7 +14,6 @@ SecondBooks is a modern, full-stack MERN (MongoDB, Express, React, Node.js) web 
 ## 📸 Screenshots
 
 *Desktop and Mobile Previews*
-> (Note: Add the screenshots taken via the `scripts` folder here when pushing to GitHub!)
 
 | Desktop View | Mobile View |
 | :---: | :---: |
