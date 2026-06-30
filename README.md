@@ -11,6 +11,27 @@ SecondBooks is a modern, full-stack MERN (MongoDB, Express, React, Node.js) web 
 * **Automated Notifications:** Email confirmations for successful orders via Nodemailer.
 * **Reviews & Ratings:** Users can leave detailed reviews and ratings on their purchased books.
 
+## 📊 Technical Achievements & Metrics
+
+### Scale & Architecture
+* **Data Models:** Engineered a scalable MongoDB database schema with **5 specialized collections** (Users, Books, Orders, Reviews, Enquiries) to manage complex e-commerce relationships.
+* **API Endpoints:** Developed and documented **35 RESTful API endpoints** across 9 distinct routing modules (Auth, Users, Books, Orders, Payments, etc.) using Node.js and Express.
+* **Reusable Components:** Built **25+ modular React components** styled with Tailwind CSS, ensuring a fully responsive experience and maintainable codebase.
+
+### Business Logic & Integrations
+* **Third-Party APIs:** Integrated **4 enterprise-level external APIs**: Razorpay (payments), Twilio (OTP auth), Delhivery (shipping estimates), and Nodemailer (transactional emails).
+* **State & Security:** Managed complex global state for shopping carts using React Context. Secured **100%** of protected API routes using stateless JWT and bcryptjs.
+
+## ⚡ Performance & SEO
+
+Optimized for speed and discoverability, achieving near-perfect Lighthouse scores:
+- **Performance:** 99
+- **Accessibility:** 88
+- **Best Practices:** 96
+- **SEO:** 92
+
+*Key optimizations include serving WebP next-gen image formats, reducing payload sizes, utilizing optimized meta tags, and leveraging **Vite** for significantly faster development builds and optimized production bundles.*
+
 ## 📸 Screenshots
 
 *Desktop and Mobile Previews*
