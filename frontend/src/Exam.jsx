@@ -50,7 +50,7 @@ const JEE = () => {
         const fetchBooks = async () => {
             setLoading(true); // Set loading to true at the start of fetch
             try {
-                const response = await axios.get(`/api/exam/${exam}/${subject}`);
+                const response = await axios.get(`/api/books/exam/${exam}/${subject}`);
                 setBooks(response.data);
             } catch (err) {
                 setError('Failed to fetch books. Please make sure the server is running.');

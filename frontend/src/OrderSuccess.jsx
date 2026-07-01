@@ -41,7 +41,7 @@ const OrderSuccess = () => {
             setError(null);
             try {
                 // 1. Fetch the order details first
-                const orderResponse = await axios.get(`/api/getorder/${orderId}`);
+                const orderResponse = await axios.get(`/api/orders/${orderId}`);
                 const orderData = orderResponse.data;
                 setDetails(orderData); 
 

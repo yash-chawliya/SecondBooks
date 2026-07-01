@@ -47,7 +47,7 @@ function EditBook() {
         }
         const loadingToast = toast.loading('Loading book data...');
         try {
-            const response = await axios.get(`/api/alterbook/${searchId}`);
+            const response = await axios.get(`/api/books/${searchId}`);
             const fetchedData = {
                 ...response.data,
                 imageUrls: response.data.imageUrls && response.data.imageUrls.length > 0 ? response.data.imageUrls : [''],
@@ -104,7 +104,7 @@ function EditBook() {
             return;
         }
 
-        const promise = axios.put(`/api/alterbook/${bookData.bookId}`, payload);
+        const promise = axios.put(`/api/books/${bookData.bookId}`, payload);
 
         toast.promise(promise, {
             loading: 'Updating book...',

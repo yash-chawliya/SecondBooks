@@ -4,6 +4,6 @@ import authMiddleware from '../middlewares/authMiddleware.js';
 
 const router = express.Router();
 
-router.post('/submit-review', authMiddleware, submitReview);
+router.post('/submit', authMiddleware, submitReview);
 
 export default router;

@@ -92,7 +92,7 @@ const CoverFooter = () => {
                                         {/* Image Section */}
                                         <div className='w-1/3 flex-shrink-0 flex items-center justify-center'>
                                             <img
-                                                src={book.imageUrls && book.imageUrls.length > 0 ? book.imageUrls[0] : '/images/placeholder.jpg'}
+                                                src={book.imageUrls && book.imageUrls.length > 0 ? book.imageUrls[0] : '/images/placeholder.webp'}
                                                 alt={book.bookDescription}
                                                 className='object-contain h-32 cursor-pointer'
                                                 onClick={() => navigate(`/book/${book.bookId}`)}
@@ -130,7 +130,7 @@ const CoverFooter = () => {
                                     <div key={book.bookId} className="card border border-gray-200 rounded-lg flex flex-col p-3 shadow-sm hover:shadow-lg transition-shadow duration-300" onClick={() => navigate(`/book/${book.bookId}`)}>
                                         <div className='items-center text-center flex justify-center h-48'>
                                             <img
-                                                src={book.imageUrls && book.imageUrls.length > 0 ? book.imageUrls[0] : '/images/placeholder.jpg'}
+                                                src={book.imageUrls && book.imageUrls.length > 0 ? book.imageUrls[0] : '/images/placeholder.webp'}
                                                 alt={book.bookDescription}
                                                 className='object-contain max-h-full max-w-full cursor-pointer'
                                                 onClick={() => navigate(`/book/${book.bookId}`)}

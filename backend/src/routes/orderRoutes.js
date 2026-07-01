@@ -3,8 +3,8 @@ import { confirmOrder, getOrder, getUserOrders } from '../controllers/orderContr
 
 const router = express.Router();
 
-router.post('/confirmorder', confirmOrder);
-router.get('/getorder/:orderid', getOrder);
-router.get('/:userId/orders', getUserOrders);
+router.post('/confirm', confirmOrder);
+router.get('/:orderId', getOrder);
+router.get('/user/:userId', getUserOrders);
 
 export default router;

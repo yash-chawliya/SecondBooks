@@ -30,7 +30,7 @@ export const AuthProvider = ({ children }) => {
 
     const verifySession = async () => {
       try {
-        const response = await axios.get('/api/verify-session');
+        const response = await axios.get('/api/auth/verify-session');
         if (response.status === 200) {
           // console.log("AuthContext: Session verified successfully.");
           await login(response.data.userId);
@@ -50,7 +50,7 @@ export const AuthProvider = ({ children }) => {
     setIsLoggedIn(true);
     // You can also fetch user details here after logging in
     try {
-      const details = await axios.get(`/api/getDetails/${id}`);
+      const details = await axios.get(`/api/users/details/${id}`);
       setName(details.data.firstName);
       setUserPhoneNumber(details.data.phone);
     } catch (error) {
@@ -60,7 +60,7 @@ export const AuthProvider = ({ children }) => {
 
   const logout = async () => {
     try {
-      await axios.post('/api/logout'); // Tell the backend to clear the cookie
+      await axios.post('/api/auth/logout'); // Tell the backend to clear the cookie
     } catch (error) {
       console.error("Logout failed:", error);
     }

@@ -36,7 +36,7 @@ function PhoneLogin() {
             const fullPhoneNumber = "+91" + phoneNumber;
 
             // API call to our backend's /send-otp endpoint
-            const response = await fetch('/api/send-otp', {
+            const response = await fetch('/api/otp/send-otp', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -77,7 +77,7 @@ function PhoneLogin() {
 
 
             // API call to our backend's /verify-otp endpoint
-            const response = await fetch('/api/verify-otp', {
+            const response = await fetch('/api/otp/verify-otp', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -91,14 +91,14 @@ function PhoneLogin() {
                 displayMessage('Login Successful!', 'success');
                 // Here you would typically handle successful login (e.g., set user state, redirect)
                 setShowOtpView(false); // Optionally hide the form
-                const user = await axios.get(`/api/checkuser/${phoneNumber}`)
+                const user = await axios.get(`/api/users/check/${phoneNumber}`)
                 if(!user.data.success){
                     alert("User is not registered.")
                     return navigate('/login')
                 }
                 const userId = user.data.userId
                 login(userId)
-                // const details = await axios.get(`/api/getDetails/${userId}`)
+                // const details = await axios.get(`/api/users/details/${userId}`)
                 setName(user.data.firstName)
                 navigate('/')
             } else {

@@ -26,7 +26,7 @@ const AccountPage = () => {
         const fetchUserData = async () => {
             if (!userId) return;
             try {
-                const response = await axios.get('/api/account/profile');
+                const response = await axios.get('/api/users/profile');
                 setUserData(response.data);
                 setProfileData({
                     firstName: response.data.firstName,
@@ -50,7 +50,7 @@ const AccountPage = () => {
 
     const handleProfileUpdate = async (e) => {
         e.preventDefault();
-        const promise = axios.put('/api/account/profile', profileData);
+        const promise = axios.put('/api/users/profile', profileData);
         toast.promise(promise, {
             loading: 'Updating profile...',
             success: (response) => {
@@ -63,7 +63,7 @@ const AccountPage = () => {
     };
 
     const handleDeleteAddress = async (addressToDelete) => {
-        const promise = axios.post('/api/account/address/delete', { addressToDelete });
+        const promise = axios.post('/api/addresses/delete', { addressToDelete });
         toast.promise(promise, {
             loading: 'Deleting address...',
             success: (response) => {

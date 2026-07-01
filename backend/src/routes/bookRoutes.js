@@ -6,13 +6,12 @@ import {
 
 const router = express.Router();
 
-router.get('/books', getBooks);
-router.get('/alterbook/:bookId', getBookById);
-router.put('/alterbook/:bookId', updateBook);
-router.post('/books/bulk', getBulkBooks);
-router.get('/exam/:exam/:subject', getBooksByExamSubject);
-router.post('/add/book', addBook);
+router.get('/', getBooks);
 router.get('/search', searchBooks);
-router.get('/books/:bookId', getBookById);
+router.get('/exam/:exam/:subject', getBooksByExamSubject);
+router.post('/bulk', getBulkBooks);
+router.post('/add', addBook);
+router.get('/:bookId', getBookById);
+router.put('/:bookId', updateBook);
 
 export default router;

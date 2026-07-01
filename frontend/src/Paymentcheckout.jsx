@@ -44,7 +44,7 @@ const Paymentcheckout = () => {
                     navigate('/login', { state: { from: location } })
                 }
                 const response = await axios.get(`/api/books/${bookId}`);
-                const responseAddress = await axios.get(`/api/get/address/${userId}`);
+                const responseAddress = await axios.get(`/api/addresses/${userId}`);
                 setBook(response.data);
                 setAllAddress(responseAddress.data);
             } catch (error) {

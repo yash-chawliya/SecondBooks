@@ -40,7 +40,7 @@ const WriteReview = () => {
         const fetchOrderDetails = async () => {
             try {
                 // This API needs to exist and return the combined order + book details
-                const response = await axios.get(`/api/getorder/${orderId}`);
+                const response = await axios.get(`/api/orders/${orderId}`);
                 const book = await axios.get(`/api/books/${response.data.orderBookId}`)
                 setOrder(book.data);
             } catch (error) {
@@ -68,7 +68,7 @@ const WriteReview = () => {
             reviewText,
         };
 
-        const promise = axios.post('/api/submit-review', payload);
+        const promise = axios.post('/api/reviews/submit', payload);
 
         toast.promise(promise, {
             loading: 'Submitting your review...',

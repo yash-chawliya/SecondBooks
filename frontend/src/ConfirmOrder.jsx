@@ -77,7 +77,7 @@ const ConfirmOrder = () => {
             return;
         }
 
-        const orderResponse = await axios.post('/api/create-razorpay-order', {
+        const orderResponse = await axios.post('/api/payments/razorpay-order', {
             amount: totalAmountAfterDiscount * 100,
             currency: 'INR',
         });
@@ -111,7 +111,7 @@ const ConfirmOrder = () => {
                     }
                 };
 
-                const verificationResult = await axios.post('/api/payment-verification', data);
+                const verificationResult = await axios.post('/api/payments/verify', data);
 
                 if (verificationResult.data.success) {
                     navigate(`/ordersuccessful?order=${verificationResult.data.orderId}`);
