@@ -101,7 +101,7 @@ const ProductView = () => {
             setError('');
 
             try {
-                const response = await axios.post('/api/estimate-delivery', {
+                const response = await axios.post('/api/delivery/estimate', {
                     destination_pin: code,
                 });
                 const tat = response.data.tat; // Turn Around Time in days
@@ -203,7 +203,7 @@ const ProductView = () => {
         <div className="w-full flex flex-col items-center">
             <div className="border rounded-lg p-2 mb-2">
                 <img
-                    src={selectedImage || '/images/placeholder.jpg'}
+                    src={selectedImage || '/images/placeholder.webp'}
                     alt={book.bookDescription}
                     className='object-contain'
                     style={{ height: '350px', width: "250px" }}

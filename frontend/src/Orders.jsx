@@ -30,7 +30,7 @@ const Orders = () => {
 
         const fetchOrders = async () => {
             try {
-                const response = await axios.get(`/api/${userId}/orders`);
+                const response = await axios.get(`/api/orders/user/${userId}`);
                 setOrders(response.data);
             } catch (err) {
                 setError('Failed to fetch orders. Please make sure the server is running.');

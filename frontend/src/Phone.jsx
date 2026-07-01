@@ -36,7 +36,7 @@ const AuthComponent = () => {
 
         const endpoint = isLoginMode ? 'login' : 'register';
         // Use relative path for deployed app
-        const url = `/api/phone/${endpoint}`;
+        const url = `/api/auth/phone/${endpoint}`;
 
         // Create the correct payload based on the mode
         const payload = isLoginMode
@@ -58,7 +58,7 @@ const AuthComponent = () => {
                 }
 
                 // Fetch user's name
-                const details = await axios.get(`/api/getDetails/${userId}`);
+                const details = await axios.get(`/api/users/details/${userId}`);
                 setName(details.data.firstName);
 
                 // Redirect the user to their original page (or the homepage)

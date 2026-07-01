@@ -3,6 +3,6 @@ import { estimateDelivery } from '../controllers/deliveryController.js';
 
 const router = express.Router();
 
-router.post('/estimate-delivery', estimateDelivery);
+router.post('/estimate', estimateDelivery);
 
 export default router;

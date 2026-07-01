@@ -94,7 +94,7 @@ const Navbar2 = () => {
         }
         setIsLoading(true);
         try {
-            const response = await axios.get(`/api/search?q=${searchQuery}`);
+            const response = await axios.get(`/api/books/search?q=${searchQuery}`);
             setSuggestions(response.data);
         } catch (error) {
             console.error('Search request failed:', error);
@@ -156,7 +156,7 @@ const Navbar2 = () => {
                         <ul>
                             {suggestions.slice(0, 5).map((book) => (
                                 <li key={book.bookId} className="flex items-center p-2 hover:bg-gray-100 cursor-pointer border-b" onClick={() => handleSuggestionClick(book.bookId)}>
-                                    <img src={book.imageUrls && book.imageUrls.length > 0 ? book.imageUrls[0] : '/images/placeholder.jpg'} alt={book.bookDescription} className="w-10 h-12 object-contain flex-shrink-0 mr-3" />
+                                    <img src={book.imageUrls && book.imageUrls.length > 0 ? book.imageUrls[0] : '/images/placeholder.webp'} alt={book.bookDescription} className="w-10 h-12 object-contain flex-shrink-0 mr-3" />
                                     <div className="overflow-hidden">
                                         <p className="text-sm font-medium text-gray-800 truncate">{book.bookDescription}</p>
                                         <p className="text-xs text-gray-500">by {book.author.join(', ')}</p>

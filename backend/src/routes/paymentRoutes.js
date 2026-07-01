@@ -3,7 +3,7 @@ import { createRazorpayOrder, verifyPayment } from '../controllers/paymentContro
 
 const router = express.Router();
 
-router.post('/create-razorpay-order', createRazorpayOrder);
-router.post('/payment-verification', verifyPayment);
+router.post('/razorpay-order', createRazorpayOrder);
+router.post('/verify', verifyPayment);
 
 export default router;

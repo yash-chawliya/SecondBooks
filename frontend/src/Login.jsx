@@ -46,7 +46,7 @@ const AuthComponent = () => {
         setSuccess('');
 
         const endpoint = isLoginMode ? 'login' : 'register';
-        const url = `/api/${endpoint}`; // Use relative URL
+        const url = `/api/auth/${endpoint}`; // Use relative URL with auth prefix
 
         const payload = isLoginMode
             ? { email, password }
@@ -65,7 +65,7 @@ const AuthComponent = () => {
                     toast.success(adding.data.message)
                 }
 
-                const details = await axios.get(`/api/getDetails/${userId}`)
+                const details = await axios.get(`/api/users/details/${userId}`)
                 setName(details.data.firstName)
 
                 navigate(from, { replace: true });

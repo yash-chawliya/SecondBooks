@@ -38,7 +38,7 @@ function ContactUs() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         
-        const promise = axios.post('/api/contact', formData);
+        const promise = axios.post('/api/contact/', formData);
 
         toast.promise(promise, {
             loading: 'Sending your message...',

@@ -108,7 +108,7 @@ function Addbook() {
         return;
     }
 
-    const promise = axios.post('/api/add/book', payload);
+    const promise = axios.post('/api/books/add', payload);
 
     toast.promise(promise, {
         loading: 'Submitting and processing images...',

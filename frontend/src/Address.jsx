@@ -79,7 +79,7 @@ export default function Address() {
             userId: userId,
         };
         
-        const promise = axios.post('/api/add/address', payload);
+        const promise = axios.post('/api/addresses/', payload);
 
         toast.promise(promise, {
             loading: 'Saving address...',
