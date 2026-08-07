@@ -26,6 +26,10 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(cookieParser());
 
+app.get('/', (req, res) => {
+  res.send('Hello World!!');
+});
+
 // Mount Routes with proper API versioning and resource prefixes
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
